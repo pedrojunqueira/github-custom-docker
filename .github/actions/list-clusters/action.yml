@@ -1,0 +1,12 @@
+name: 'List Clusters'
+description: 'List all clusters in a Databricks workspace'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+inputs:
+  databricks_token:
+    description: 'Databricks token'
+    required: true
+  workspace_url:
+    description: 'Workspace URL'
+    required: true

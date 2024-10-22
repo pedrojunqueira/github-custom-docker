@@ -1,0 +1,15 @@
+name: Custom Action Docker
+on:
+  push:
+    branches:
+      - master
+jobs:
+  list-clusters:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: List Clusters
+        uses: ./.github/actions/list-clusters
+        with:
+            databricks_token: ${{ secrets.DATABRICKS_TOKEN }}
+            workspace_url: 'https://adb-3304201807713135.15.azuredatabricks.net'
